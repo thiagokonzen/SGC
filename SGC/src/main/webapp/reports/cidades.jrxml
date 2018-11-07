@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cidades" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="6b3c3355-2473-48c8-9a07-f2dfc99e5e36">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[c2djLmVzdGFkbyBBUyAsMjc2LDc1LGIyMjdmMGUwLTBiNDctNDA4Mi05NGZjLTU4NDAxMWNjNDY4
+MztzZ2MuY2lkYWRlIEFTICw0Myw1OSwxOTg0NzY1NS1kNTk4LTRkY2MtYWVlOS04Njc1N2YyYTZm
+ODk7]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SGC Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT sgc.cidade.nome,
+	sgc.estado.sigla
+FROM sgc.cidade
+	INNER JOIN sgc.estado ON 
+	 sgc.cidade.estado_codigo = sgc.estado.codigo]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="cidade"/>
+	</field>
+	<field name="sigla" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="sigla"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="estado"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="85" splitType="Stretch">
+			<image>
+				<reportElement x="67" y="19" width="420" height="66" uuid="1ecdc16c-9e15-4d39-b806-c047c9a8e7cc"/>
+				<imageExpression><![CDATA["C:/Desenvolvimento/Workspace/SGC/src/main/webapp/resources/images/banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="38" splitType="Stretch">
+			<staticText>
+				<reportElement x="180" y="8" width="202" height="30" uuid="7b96100f-630f-4767-9589-f3b3f2be62d1"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Cidades]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="60" splitType="Stretch">
+			<staticText>
+				<reportElement x="116" y="30" width="100" height="30" uuid="79e4cd62-f842-46c0-b336-5b6718718f60">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9c03235-c558-43c6-ae4b-1216a5da1a80"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="26" width="100" height="30" uuid="cd1f8e2f-08b2-4930-9afa-79876a26a87b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c0490d37-5c0c-40eb-850b-50c32be4a8f5"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sigla
+]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="116" y="5" width="100" height="30" uuid="3642dec8-2992-4660-a440-23bb8e2be6d4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9c03235-c558-43c6-ae4b-1216a5da1a80"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="363" y="6" width="100" height="30" uuid="8323e87d-998c-4bd7-b2ba-1dc8cb99ca66">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c0490d37-5c0c-40eb-850b-50c32be4a8f5"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{sigla}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="18" width="540" height="30" uuid="84d11870-7218-4a46-be9d-b6553ab704ff"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gerenciamento Comercial]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fabricantes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="671e9a87-96f9-488c-9ef8-483804f3332f">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[c2djLnVzdWFyaW8gQVMgLDYxLDQxLDE0NWUzYTI0LWRiNzYtNDhiOS1hOTQyLTJkYmY2YjYwMmM1
+MztzZ2MucGVzc29hIEFTICwzMTcsMzQsYjBlYjM1YTgtNDIxZC00NzAxLWE4NjUtNmQ3M2Y0NjRk
+NmE5Ow==
+]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SGC Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT sgc.pessoa.nome,
+	sgc.usuario.tipo,
+	sgc.usuario.ativo,
+	sgc.pessoa.nome
+FROM sgc.usuario
+	INNER JOIN sgc.pessoa ON 
+	 sgc.usuario.pessoa_codigo = sgc.pessoa.codigo]]>
+	</queryString>
+	<field name="nome" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nome"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="pessoa"/>
+	</field>
+	<field name="tipo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tipo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuario"/>
+	</field>
+	<field name="ativo" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="ativo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="usuario"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="60" y="13" width="420" height="66" uuid="43a2390e-43f5-4f29-a5d6-584641d063a5"/>
+				<imageExpression><![CDATA["C:/Desenvolvimento/Workspace/SGC/src/main/webapp/resources/images/banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="45" uuid="efefbd66-d7aa-44ef-822d-ed152813747d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="teste&#xD;&#xA;" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Usuários
+]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="66" y="2" width="100" height="30" uuid="967f8ae1-3fbe-4ab3-bb51-8969eb99b959">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="f8207dd5-c22b-4c01-9841-834af35056e3"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nome	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="0" width="131" height="30" uuid="5935f36c-e443-4eaa-9797-f9d336295e63">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="04ede955-d6bd-4a1b-8aac-422c1f12da45"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Função	]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="0" width="119" height="30" uuid="996e4c62-849c-4c72-98bc-233fc94b4c17">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="a257bd6b-5768-4e02-a7e7-8b259fe8e940"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="50" splitType="Stretch">
+			<textField>
+				<reportElement x="74" y="5" width="100" height="30" uuid="aba1f9e1-e09d-491c-b727-40398aaac939">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9d570c83-648a-42e1-ba47-64d0474849e2"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="236" y="4" width="100" height="30" uuid="7c8cc202-c851-4bd2-8a6f-8dc85e5e479f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3bb0b490-b58d-491f-8b08-3473b944a7e0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tipo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="400" y="0" width="100" height="30" uuid="26253406-2543-415a-9c5f-f566d793988f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="c689e565-495a-493a-9d57-0a559a11001a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{ativo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="5" width="540" height="30" uuid="eabc5162-ab6d-4511-b03b-a11e58529c37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gerenciamento Comercial]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>

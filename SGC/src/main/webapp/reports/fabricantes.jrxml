@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="fabricantes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="671e9a87-96f9-488c-9ef8-483804f3332f">
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[c2djLmZhYnJpY2FudGUgQVMgLDExMiw2NSw2ZjQ1ODk4NS0zYTEzLTRlYTQtYjE5Ny1iNTJkYmVk
+MTc1ZWY7]]>
+	</property>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="SGC Data Adapter "/>
+	<queryString language="SQL">
+		<![CDATA[SELECT sgc.fabricante.descricao,
+	sgc.fabricante.codigo
+FROM sgc.fabricante]]>
+	</queryString>
+	<field name="descricao" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="descricao"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fabricante"/>
+	</field>
+	<field name="codigo" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="codigo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="fabricante"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="60" y="13" width="420" height="66" uuid="43a2390e-43f5-4f29-a5d6-584641d063a5"/>
+				<imageExpression><![CDATA["C:/Desenvolvimento/Workspace/SGC/src/main/webapp/resources/images/banner.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="45" uuid="efefbd66-d7aa-44ef-822d-ed152813747d"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="teste&#xD;&#xA;" size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Relatório de Fabricantes
+]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="48" splitType="Stretch">
+			<staticText>
+				<reportElement x="320" y="5" width="100" height="30" uuid="e2ca90ce-20fc-4477-bf69-f2cf96f5015e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f47146a-02bc-45b2-8c71-60da974ec4e0"/>
+				</reportElement>
+				<textElement>
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Descrição]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="72" y="7" width="100" height="30" uuid="a6f24ba3-7127-4c0a-b907-e8825fa14f80">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff439a85-579d-4218-b778-b189ee22d990"/>
+				</reportElement>
+				<textElement verticalAlignment="Top">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Código
+]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="36" splitType="Stretch">
+			<textField>
+				<reportElement x="330" y="2" width="100" height="30" uuid="ab933ef2-7a09-43c2-bb70-aef9412fe102">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="1f47146a-02bc-45b2-8c71-60da974ec4e0"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{descricao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="89" y="4" width="100" height="30" uuid="7fd932c5-1edc-4969-9b00-f8727e9b3290">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ff439a85-579d-4218-b778-b189ee22d990"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{codigo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="10" y="5" width="540" height="30" uuid="eabc5162-ab6d-4511-b03b-a11e58529c37"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Sistema de Gerenciamento Comercial]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
